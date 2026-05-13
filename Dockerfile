@@ -2,6 +2,13 @@ ARG AIRFLOW_IMAGE=oci.stackable.tech/sdp/airflow:3.0.6-stackable25.11.0@sha256:7
 
 FROM ${AIRFLOW_IMAGE} AS production
 
+USER root
+
+# Requried by lightgbm
+RUN microdnf install libgomp
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt && \
     rm requirements.txt
+
+USER stackable
