@@ -1,4 +1,4 @@
-ARG AIRFLOW_IMAGE=oci.stackable.tech/sdp/airflow:3.0.6-stackable25.11.0@sha256:7a88a27a3f8c2db69a3f6f9dee4c409ad1136e8c9e0ea6ca02a63f6f7f627204
+ARG AIRFLOW_IMAGE=oci.stackable.tech/sdp/airflow:3.0.6-stackable26.3.0@sha256:297ca0a8563f069994cec346b05d5df352a4619e5f52a7230c489d51b263f9b7
 
 FROM ${AIRFLOW_IMAGE} AS production
 
