@@ -1,3 +1,5 @@
 lightgbm==4.6.0
 torch==2.11.0
 scikit-learn==1.8.0
+wradlib==2.9.5
+pyproj==3.7.2
