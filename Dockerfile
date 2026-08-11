@@ -1,4 +1,4 @@
-ARG AIRFLOW_IMAGE=oci.stackable.tech/sdp/airflow:3.0.6-stackable26.3.0@sha256:297ca0a8563f069994cec346b05d5df352a4619e5f52a7230c489d51b263f9b7
+ARG AIRFLOW_IMAGE=oci.stackable.tech/sdp/airflow:3.0.6-stackable26.7.0@sha256:72d6e8817159af47b681207d74c692aa22c05ee6a62a34dee800167da444963b
 
 FROM ${AIRFLOW_IMAGE} AS production
 
@@ -8,7 +8,7 @@ USER root
 RUN microdnf install libgomp
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt && \
+RUN python -m pip install --no-cache-dir -r requirements.txt && \
     rm requirements.txt
 
 USER stackable
