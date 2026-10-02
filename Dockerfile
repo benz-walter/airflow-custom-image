@@ -12,3 +12,9 @@ RUN python -m pip install --no-cache-dir -r requirements.txt && \
     rm requirements.txt
 
 USER stackable
+
+# Install dbt
+COPY requirements.dbt.txt .
+RUN python -m venv dbt_venv && source dbt_venv/bin/activate && \
+    pip install --no-cache-dir -r requirements.dbt.txt && deactivate && \
+    rm requirements.dbt.txt

@@ -1,5 +1,3 @@
-**/.git
-**/.github
-
-# IDEs
-**/.idea/
+*
+!requirements.txt
+!requirements.dbt.txt
